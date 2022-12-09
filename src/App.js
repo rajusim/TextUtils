@@ -36,10 +36,6 @@ function App() {
   }  
   return (
     <>
-      {/* <Navbar title="TextUtils" aboutText="About Us" toggleMode={toggleMode}/>
-      <About/>
-      <TextForm heading="Enter the text to analyze below" mode={mode}/> */}
-
       <Router>
         <Navbar title="My Tools" aboutText="About Us" mode={mode} toggleMode={toggleMode} />
         <Routes>
@@ -48,9 +44,6 @@ function App() {
           <Route path="/TextForm" element={<TextForm heading="Enter the text to analyze below" mode={mode}/>}/>
         </Routes>
       </Router>
-
-
-
     </>
   );
 }
