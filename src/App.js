@@ -1,21 +1,22 @@
 import './App.css';
+import './index.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React, { useState } from 'react';
 import About from './components/About';
 import Home from './components/Home';
+import Alert from './components/Alert';
+
 import {
   BrowserRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
-import Alert from './components/Alert';
 
 function App() {
   const [mode, setMode] = useState('light');
-
   const [alert, setAlert] = useState(null);
-  
+
   const showAlert = (message,type)=>{
        setAlert({
          msg: message,
@@ -23,7 +24,7 @@ function App() {
        })
        setTimeout(() => {
        setAlert(null) ;
-       }, 100000);
+       }, 1500);
   }
 
   const toggleMode = () =>{
@@ -46,7 +47,7 @@ function App() {
         <Routes>
           <Route path="/"  element={<Home mode={mode} />} />
           <Route path="/About"  element={<About  mode={mode} />} />
-          <Route path="/TextForm" element={<TextForm heading="Enter the text to analyze below" showAlert={showAlert} mode={mode}/>}/>
+          <Route path="/TextForm" element={<TextForm heading="Try TextUtils - Word Counter, Character Counter, Remove extra spaces" showAlert={showAlert} mode={mode}/>}/>
         </Routes>
       </Router>
     </>
